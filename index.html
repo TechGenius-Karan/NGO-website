@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WellnessHarbour Foundation</title>
+    <style>
+ 
+        body {
+            background-image: url('medical_background.jpg'); 
+            background-repeat: no-repeat;
+            background-size: 100%;
+            margin: 0; 
+            padding: 0; 
+            font-family: Arial, sans-serif;
+        }
+
+        ul {
+            font-size:21px;
+            color:#7CB130;
+            line-height:40px;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        h2 {
+            color:#3E3D3F;
+            margin-left:20px;
+            text-decoration: underline;
+        }
+        
+        .parent {
+            display:flex;
+            flex-direction:column;
+            opacity:0;
+            animation:fadein 2s forwards;
+        }
+
+        /* style for the text container */
+        .text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: darkslategrey;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            width: 100%; /* Make the container full width */
+            margin:0;
+        }
+
+
+        
+        /* Style for the marquee */
+        .marquee {
+            font-size: 32px;
+            margin:0px;
+            font-weight: bold;
+            color:#2C2A8A;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            top:0;
+            background-color: #444; 
+            position: fixed;
+            width: 100%;
+            margin-left:0;
+            padding-left:50px;
+            z-index: 10;
+            box-shadow: 0 8px 14px rgba(0, 0, 0, 0.8);
+        }
+        
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            margin-left:10px;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size:20px;
+        }
+        
+        .navbar a:hover {
+            background-color: #555; /* Slightly darker grey on hover */
+        }
+
+        /* Join Us button styles */
+        .join-button {
+            background-color: #e74c3c; /* Shade of red */
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top:-10px;
+            transition: background-color 0.3s, transform 0.5s;
+        }
+
+        .join-button:hover {
+            background-color: #c0392b; /* Darker red on hover */
+            transform: scale(1.1);
+        }
+
+
+
+        /*  About us section  */
+
+        .about-us {
+            margin-top:70%;
+        }
+
+        .about-us-content {
+            width:70%;
+        }
+
+        .about-us-box {
+            display:flex;    
+        }
+
+        .about-us-image {
+            margin-left:50px;
+            margin-right:20px;
+            height:200px;
+            width:300px;
+            border-radius:90px;
+            transition:transform 2s, border-radius 1.5s;
+        }
+
+        .about-us-image:hover {
+            transform: scale(1.1);
+            border-radius:20px;
+        }
+
+        .content {
+            font-size:20px;
+            color:#3E3E3F;
+            text-align:left;
+            padding-left:20px;
+            padding-right:20px;
+            line-height: 30px;
+        }
+
+        /* Mission Section  */
+
+        .mission-image {
+            margin:0 30px 0 30px;
+            height:200px;
+            width:200px;
+            border-radius:100px;
+            transition:transform 1.5s, border-radius 1.5s;
+        }
+
+        .mission-image:hover {
+            transform: scale(1.1);
+            border-radius:80px;
+        }
+
+        /* Footer Section   */
+
+        footer {
+            background-color: #333; 
+            padding: 20px 0;
+            text-align: center;
+            color: #fff; 
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: flex-start; 
+        }
+
+        .contact-info {
+            padding-left:250px;
+        }
+
+        .contact-info h3, .social-media h3 {
+            color: #fff;
+            font-size:24px; 
+            font-family: 'Raleway', sans-serif; 
+        }
+
+        .contact-info h3 {
+            margin-left:30px;
+        }
+
+        .contact-info p {
+            list-style-type: none;
+            padding: 0;
+            margin-left: 20px; 
+            font-size:18px;
+        }
+        
+        .social-media {
+            padding-left:200px;
+        }
+
+        .social-media a {
+            color:skyblue;
+        }
+
+        .social-media ul {
+            list-style-type: none;
+            padding: 0;
+            font-size:22px;
+        }
+
+        .social-media ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .social-media ul li:last-child {
+            margin-right: 0;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            color: #ccc; /* Lighter text color */
+        }
+
+        .copyright p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+
+
+        /* Styling Headings */
+
+        .subheading1 {
+            margin-top: 10px;
+            font-size:3em;
+            text-align: center;
+            font-family:'Raleway', sans-serif;
+            text-decoration: underline;
+            color:#2C2A8A;
+            font-weight:bold;
+            letter-spacing:2px;
+        }
+
+        .subheading2 {
+            margin-top: 40px;
+            font-size:3em;
+            text-align: center;
+            font-family:'Raleway', sans-serif;
+            text-decoration: underline;
+            color:#2C2A8A;
+            font-weight:bold;
+            letter-spacing:2px;
+        }
+
+
+        @keyframes fadein {
+            100% {
+            	opacity:1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class='navbar'>
+        <a href="index.html"> Home </a>
+        <a href="nextpage.html"> Our Work </a>
+        <a href="timings.html"> Our Team </a>
+    </nav>
+
+<div class="parent">
+
+    <section class="homepage">
+
+	    <div class="homepage-area">
+
+		    <div class="text-container">
+		        <div class="marquee">
+		            <h1><marquee direction="left" behavior="alternate" scrollamount="8" width='80%' scrolldelay=100>WellnessHarbour Foundation</marquee></h1>
+		        </div>
+		        <button class="join-button">
+		            <a href="https://mailchi.mp/207641795f26/px22bq6fz2" target="_blank" style="text-decoration: none;">Join Us</a>
+		        </button>
+		        <p>We Heal. We Advocate. We Empower.</p>
+		    </div>
+
+	    </div>
+
+    </section>
+
+    <section class="about-us">
+        <h1 class='subheading1'> About us </h1><hr><br>
+        <div class='about-us-box'>
+        	<div class='about-us-content'>
+                <p class='content'>Welcome to <i><b>WellnessHarbour Foundation</b></i>, where compassion meets action in the realm of healthcare. We're on a mission to bring quality healthcare within reach of every individual, regardless of their circumstances. Our journey is fueled by a deep commitment to collaboration, innovation, and unwavering dedication. At Wellness Harbour, we believe in the power of community and the transformative impact of accessible healthcare. Join us as we navigate the seas of healthcare equity, guided by the beacon of hope and healing.</p>
+        	</div>
+            <img src="helping_patient.jpeg" class='about-us-image'>
+        </div>
+    </section>
+
+
+    <section>
+        <h1 class="subheading2"> Our Mission </h1><hr/><br/>
+        <div class='mission-box'>
+            <div class='mission-content'>
+                <p class='content'> Our mission at WellnessHarbour Foundation is driven by a commitment to advocating for healthcare equity, empowering communities, and fostering innovation. Through collaborative efforts and strategic initiatives, we aim to address the systemic barriers to healthcare access, promote health literacy, and empower individuals to become active agents in their own health journey. Our vision is grounded in the belief that everyone deserves access to quality healthcare, regardless of their background or circumstances.</p>
+            </div>
+            <img src="healthcare_awareness.jpeg" class='mission-image'>
+            <img src="village_helper.jpeg" class='mission-image'>
+            <img src="medical_innovation.jpeg" class='mission-image'>
+            <img src="educating_community.jpg" class='mission-image'>
+            <img src="promoting_health.jpg" class='mission-image'>
+        </div>
+        <br>
+            <h2> The WellnessHarbour Foundation focuses on:</h2>
+            <ul class='list'>
+                <li>Advocating for healthcare equity and access</li>
+                <li>Empowering communities through education and resources</li>
+                <li>Driving innovation in healthcare delivery</li>
+                <li>Promoting preventive care and health awareness</li>
+                <li>Collaborating with stakeholders to address systemic healthcare disparities</li>
+            </ul>
+    </section>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <section>
+        <div class="footer">
+        <footer>
+            <div class="footer-container">
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@wellnessharbourfoundation.org</p>
+                    <p>Phone: +91 88808 97245</p>
+                    <p>Address: 411045 Laxman Nagar, Pune, India</p>
+                </div>
+                <div class="social-media">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 WellnessHarbour Foundation. All rights reserved.</p>
+            </div>
+        </footer>
+        </div>
+
+    </section>
+
+
+</div>
+</body>
+</html>
+			

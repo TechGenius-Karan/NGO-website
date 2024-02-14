@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WellnessHarbour Foundation</title>
+    <style>
+        body {
+            background-image: url('community_helper.jpeg');
+            background-repeat: no-repeat;
+            background-size: 70%;
+            padding: 0;
+            margin:0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            top:0;
+            background-color: #444; 
+            position: fixed;
+            width: 100%;
+            margin-left:0;
+            padding-left:50px;
+            z-index: 10;
+            box-shadow: 0 8px 14px rgba(0, 0, 0, 0.8);
+        }
+        
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            margin-left:10px;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size:20px;
+        }
+        
+        .navbar a:hover {
+            background-color: #555; /* Slightly darker grey on hover */
+        }
+
+        .heading {
+            color:deepskyblue;
+            font-size:55px;
+            text-align:center;
+        }
+
+        .motto {
+            margin-top:12%;
+            margin-right:30px;
+            margin-left:72%;
+            width:auto;
+            height:auto;
+            opacity:0;
+            animation:fadein 2s forwards;
+        }
+
+        .content {
+            padding-top: 12%;
+            opacity:0;
+            animation:fadein 2s forwards;
+        }
+
+        /* Initiatives Section */
+
+        .subheading1 {
+            margin-top: 10px;
+            font-size:3em;
+            text-align: center;
+            font-family:'Raleway', sans-serif;
+            text-decoration: underline;
+            color:#2C2A8A;
+            font-weight:bold;
+            letter-spacing:2px;
+        }
+
+        .initiatives-content-box {
+            margin-left:30px;
+            margin-right:30px;
+            width:auto;
+        }
+
+        .initiatives-content {
+            font-size:20px;
+            color:#3E3E3F;
+            line-height: 30px;
+        }
+
+        table {
+            width: 97%;
+            border-collapse: collapse;
+            margin-left:20px;
+            margin-right:20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+    /* Stakeholders section*/
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            border:2px solid darkgrey;
+            box-shadow: 0 0 6px rgba(0,0,0,0.5);
+            border-radius:20px;
+        }
+
+        .stakeholder,
+        .participant {
+            margin-bottom: 40px;
+        }
+
+        .stakeholder img {
+            width: 300px;
+            height: 200px;
+            border-radius: 48%;
+            margin-bottom: 10px;
+            margin-right:30px;
+        }
+
+        .participant img {
+            width: 350px;
+            height: 250px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            margin-right:30px;
+        }
+
+        .logo2 {
+            border-radius:40%;
+        }
+
+        .description {
+            background-color: #d3f7d5;
+            padding: 10px;
+            border-radius: 5px;
+            margin:20px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .description h3 {
+            font-size:18px;
+        }
+
+        .role {
+            font-weight: bold;
+        }
+
+        /* Footer Section   */
+
+        footer {
+            background-color: #333; 
+            padding: 20px 0;
+            text-align: center;
+            color: #fff; 
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: flex-start; 
+        }
+
+        .contact-info {
+            padding-left:250px;
+        }
+
+        .contact-info h3, .social-media h3 {
+            color: #fff;
+            font-size:24px; 
+            font-family: 'Raleway', sans-serif; 
+        }
+
+        .contact-info h3 {
+            margin-left:30px;
+        }
+
+        .contact-info p {
+            list-style-type: none;
+            padding: 0;
+            margin-left: 20px; 
+            font-size:18px;
+        }
+        
+        .social-media {
+            padding-left:200px;
+        }
+
+        .social-media a {
+            color:skyblue;
+        }
+
+        .social-media ul {
+            list-style-type: none;
+            padding: 0;
+            font-size:22px;
+        }
+
+        .social-media ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .social-media ul li:last-child {
+            margin-right: 0;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            color: #ccc; /* Lighter text color */
+        }
+
+        .copyright p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* animation  */
+
+        @keyframes fadein {
+            100% {
+                opacity:1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="nextpage.html">Our Work</a>
+        <a href="timings.html">Our Team</a>
+    </nav>
+
+    <div class="motto"> <h1 class="heading">Building Healthier Communities, One Step at a Time</h1> </div>
+    
+
+    <!-- Main content -->
+    <div class="content">
+        <h1 class='subheading1'>Our Initiatives</h1>
+        <hr/>
+        <br/>
+        <div class='initiatives-content-box'>
+            <p class='initiatives-content'>At WellnessHarbour Foundation, our initiatives are designed to meet the healthcare needs of our communities. We establish community health clinics, run educational programs, and host medical camps to improve health and well-being of individuals, families, and communities. Our goal is to provide quality healthcare, raise awareness, and collaborate with partners for sustainable solutions.</p>
+        </div>
+
+        <br/>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Initiative</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Community Health Clinics</td>
+                    <td>Establishing clinics in underserved areas to provide primary healthcare services.</td>
+                    <td>Ongoing</td>
+                </tr>
+                <tr>
+                    <td>Health Education Programs</td>
+                    <td>Conducting workshops and seminars to promote health literacy and awareness.</td>
+                    <td>Planned</td>
+                </tr>
+                <tr>
+                    <td>Medical Outreach Camps</td>
+                    <td>Organizing medical camps to provide free healthcare services to remote communities.</td>
+                    <td>Upcoming</td>
+                </tr>
+                <tr>
+                    <td>Telemedicine Services</td>
+                    <td>Introducing telemedicine platforms to facilitate remote consultations and medical advice.</td>
+                    <td>Under Development</td>
+                </tr>
+                <tr>
+                    <td>Mental Health Awareness Campaigns</td>
+                    <td>Launching campaigns to reduce stigma and increase awareness about mental health issues.</td>
+                    <td>Planned</td>
+                </tr>
+            </tbody>
+        </table>        
+
+        <br/>
+        <br/>
+
+        <h1 class='subheading1'>Our Partners</h1>
+        <hr/>
+
+        <div class="container">
+        <h1>Our Supporters and Contributors</h1>
+        <div class="stakeholder">
+            <img src="company_logo1.png" alt="Stakeholder Image">
+            <img src="company_logo3.jpeg" alt="Stakeholder Image">
+            <div class="description">
+                <h3 class="role">Corporate Partner</h3>
+                <p>Companies and businesses that collaborate with us on various projects, providing medicinal resources, expertise, and networking opportunities to further our mission.</p>
+            </div>
+        </div>
+        <div class="stakeholder">
+            <img src="company_logo2.jpg" alt="Stakeholder Image">
+            <img src="company_logo4.jpg" alt="Stakeholder Image">
+            <div class="description">
+                <h3 class="role">Financial Sponsor</h3>
+                <p>Contributors who believe in our cause and generously support our initiatives through funding and grants.</p>
+            </div>
+        </div>
+        <br/>
+
+        <!-- Additional stakeholders go here -->
+
+        <h1>Our Volunteers and Beneficiaries</h1>
+        <div class="participant">
+            <img src="volunteer1.jpeg" alt="Participant Image">
+            <img src="volunteer2.jpeg" alt="Participant Image">
+            <div class="description">
+                <h3 class="role">Dedicated Volunteers</h3>
+                <p>Dedicated individuals who selflessly contribute their time and skills to support our programs.</p>
+            </div>
+        </div>
+        <div class="participant">
+            <img src="beneficiary1.jpg" alt="Participant Image">
+            <img src="beneficiary2.jpeg" alt="Participant Image">
+            <div class="description">
+                <h3 class="role">Empowered Beneficiaries</h3>
+                <p>Individuals and families benefiting from our programs, gaining access to vital resources and support for improved quality of life.</p>
+            </div>
+        </div>
+
+        <!-- Additional participants go here -->
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@wellnessharbourfoundation.org</p>
+                    <p>Phone: +91 88808 97245</p>
+                    <p>Address: 411045 Laxman Nagar, Pune, India</p>
+                </div>
+            <div class="social-media">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 WellnessHarbour Foundation. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
